@@ -1,0 +1,26 @@
+.loader {
+  color: #2563eb;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  animation: bounce-spin 2s infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce-spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
