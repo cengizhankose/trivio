@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Who is the author of the 'Harry Potter' series?",
+    "answers": [
+      "J.K. Rowling",
+      "Stephen King",
+      "J.R.R. Tolkien",
+      "George R.R. Martin"
+    ],
+    "correctAnswer": "J.K. Rowling"
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "answers": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    "correctAnswer": "Canberra"
+  },
+  {
+    "question": "Which planet is closest to the sun?",
+    "answers": ["Venus", "Earth", "Mercury", "Mars"],
+    "correctAnswer": "Mercury"
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "answers": [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Claude Monet",
+      "Leonardo da Vinci"
+    ],
+    "correctAnswer": "Leonardo da Vinci"
+  }
+]
