@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-const ResultPage = ({ score }) => {
+const ResultPage = () => {
   const router = useRouter();
+  const { points } = router.query;
 
   const playAgain = () => {
     router.push("/");
@@ -15,7 +16,7 @@ const ResultPage = ({ score }) => {
             Game Over
           </h2>
           <p className="mt-2 text-center text-xl text-purple-700">
-            Your Score: {score}
+            Your Score: {points}
           </p>
         </div>
         <div className="mt-4 flex items-center justify-center">

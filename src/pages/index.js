@@ -3,8 +3,10 @@ import { useRouter } from "next/router";
 // import FirebaseDBService from "../../firebase/dbService";
 import QuestionLoader from "@/components/QuestionLoader";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const GamePage = () => {
+  const [points, setPoints] = useState(0);
   const [questionData, setQuestionData] = useState(null);
   const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -30,22 +32,17 @@ const GamePage = () => {
   }, []);
 
   const handleAnswerClick = (answer) => {
-    console.log(
-      "🚀 ~ file: index.js:11 ~ handleAnswerClick ~ data.length:",
-      questionData.length
-    );
-    console.log(
-      "🚀 ~ file: index.js:12 ~ handleAnswerClick ~ currentQuestion:",
-      currentQuestion + 1
-    );
-    if (currentQuestion + 1 >= questionData.length) {
-      router.push("/result");
+    if (answer === questionData[currentQuestion].correctAnswer) {
+      toast.success("Correct Answer");
+      setPoints(points + 1);
     } else {
-      if (answer === questionData[currentQuestion].correctAnswer) {
-        // Do something when the answer is correct
-      } else {
-        // Do something when the answer is incorrect
-      }
+      toast.error("Wrong Answer");
+    }
+    if (currentQuestion + 1 >= questionData.length) {
+      router.push({
+        pathname: "/result",
+        query: { points },
+      });
     }
 
     setCurrentQuestion(currentQuestion + 1); // Move to the next question
